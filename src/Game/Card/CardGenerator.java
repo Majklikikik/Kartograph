@@ -9,6 +9,8 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class CardGenerator {
+    public static float fullCardCount=11f;
+
     public static Card Ruin(){
         Card r=new Card("Ruins");
         r.ruinCard=true;

@@ -21,10 +21,10 @@ public class Schildwald extends SingleRater {
     public int rateCurrent(Field f) {
         int p=0;
         for (int i=0;i<10;i++){
-            if (f.getType(p, 0)== TileType.FOREST) p++;
-            if (f.getType(10-p, 10)== TileType.FOREST) p++;
-            if (f.getType(10, p)== TileType.FOREST) p++;
-            if (f.getType(0, 10-p)== TileType.FOREST) p++;
+            if (f.getType(i, 0)== TileType.FOREST) p++;
+            if (f.getType(10-i, 10)== TileType.FOREST) p++;
+            if (f.getType(10, i)== TileType.FOREST) p++;
+            if (f.getType(0, 10-i)== TileType.FOREST) p++;
         }
         return p;
     }

@@ -38,7 +38,7 @@ public class SchildDesReiches extends SingleRater {
                 }
             }
         }
-        return c;
+        return c*2;
     }
 
     @Override
@@ -57,7 +57,7 @@ public class SchildDesReiches extends SingleRater {
                     }
                 }
             }
-            return c+b*timeRemaining*params[0];
+            return c*2+b*2*timeRemaining*params[0];
         }
 
     @Override

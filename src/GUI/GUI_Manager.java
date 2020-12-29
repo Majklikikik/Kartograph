@@ -9,6 +9,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 import static Utility.Utilities.slp;
 
@@ -20,12 +21,13 @@ public class GUI_Manager {
     private JLabel labelPoints;
     private int cardWindowCount=0;
 private int initComponentCount;
-    private JLabel pt, tim, xp;
+    private JLabel pt, tim, xp, coins;
 
     public void actualizeGameStats(){
         pt.setText("Points: "+s.Points);
         tim.setText(s.t.toString());
         xp.setText("Expeced: "+s.expectedPoints);
+        coins.setText("Coins: "+s.coin);
         window.revalidate();
     }
 
@@ -45,16 +47,16 @@ private int initComponentCount;
         fw.setBounds(0,0,600,600);
         window.add(fw);
 
-        if (s.wait) {
-            JButton b = new JButton("Place");
-            b.setBounds(10, 600, 95, 30);
-            b.addActionListener(new ActionListener() {
+        //if (s.wait) {
+            JButton bb = new JButton("Place");
+            bb.setBounds(10, 600, 95, 30);
+            bb.addActionListener(new ActionListener() {
                 public void actionPerformed(ActionEvent e) {
                     s.notRunning=false;
                 }
             });
-            window.add(b);
-        }
+            window.add(bb);
+        //}
 
         JButton b = new JButton("Remove Cards");
         b.setBounds(110, 600, 95, 30);
@@ -69,7 +71,7 @@ private int initComponentCount;
         JPanel jp = new JPanel();
         jp.add(pt);
         pt.setFont(new Font("TimesRoman",Font.BOLD,20));
-        jp.setBounds(220,600,95,30);
+        jp.setBounds(220,600,150,30);
         window.add(jp);
 
         tim=new JLabel();
@@ -77,7 +79,7 @@ private int initComponentCount;
         JPanel jp2 = new JPanel();
         jp2.add(tim);
         tim.setFont(new Font("TimesRoman",Font.BOLD,20));
-        jp2.setBounds(330,600,150,30);
+        jp2.setBounds(380,600,150,30);
         window.add(jp2);
 
         xp=new JLabel();
@@ -85,8 +87,16 @@ private int initComponentCount;
         JPanel jp3 = new JPanel();
         jp3.add(xp);
         xp.setFont(new Font("TimesRoman",Font.BOLD,20));
-        jp3.setBounds(490,600,150,30);
+        jp3.setBounds(540,600,150,30);
         window.add(jp3);
+
+        coins=new JLabel();
+        coins.setText("Coins: 0");
+        JPanel jp4 = new JPanel();
+        jp4.add(coins);
+        coins.setFont(new Font("TimesRoman",Font.BOLD,20));
+        jp4.setBounds(700,600,150,30);
+        window.add(jp4);
 
         /*labelPoints=new JLabel();
         //labelPoints.setBounds(700,600,50,10);
@@ -110,8 +120,8 @@ private int initComponentCount;
 
         window.add(new JLabel());
         window.setVisible(true);
-        System.out.println(window.getContentPane().getComponentCount());
-        initComponentCount=window.getComponentCount()+5;
+        //System.out.println(window.getContentPane().getComponentCount());
+        initComponentCount=window.getComponentCount()+6;
         return fw;
     }
 
@@ -139,5 +149,10 @@ private int initComponentCount;
 
     public void repaint() {
         window.repaint();
+    }
+
+    public void close() {
+        window.setVisible(false);
+        window.dispose();
     }
 }

@@ -65,14 +65,14 @@ public class Gruenflaeche extends SingleRater {
                     sl+=f.probabilityToFill(x,y,ss);
                 }
             }
-            if (z>=1) p++; else p+=params[ls-1]*timeRemaining*sl;
-            if (s>=1) p++; else p+=params[lz-1]*timeRemaining*zl;
+            if (z>=1) p++; else p+=params[lz]*timeRemaining*zl;
+            if (s>=1) p++; else p+=params[ls]*timeRemaining*sl;
         }
         return p;
     }
 
     @Override
     public float[] getDefaultParams() {
-        return new float[]{0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f};
+        return new float[]{0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.01f,0.1f};
     }
 }

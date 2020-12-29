@@ -15,6 +15,7 @@ import Game.Field.Tile.TileType;
 import Utility.TileToBoolean;
 import Utility.TypeToBool;
 import Utility.Utilities;
+import javafx.geometry.Pos;
 
 import javax.swing.*;
 import java.awt.*;
@@ -22,6 +23,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
+
+import static AI.SeasonRaters.Season.*;
 
 
 public class Field {
@@ -35,14 +38,109 @@ public class Field {
     boolean hardMode;
     FieldWindow fw;
     LinkedList<Card> availableCards;
-    HashMap<Season, HashMap<TileType,Float>>[][] probs= new HashMap[11][11];
+    private HashMap<Season, HashMap<TileType,Float>>[][] probs= new HashMap[11][11];
+
+    public HashMap<TileType, Float> zeroMap(){
+        HashMap<TileType,Float> ret= new HashMap<>();
+        ret.put(TileType.WATER,0f);
+        ret.put(TileType.FIELD,0f);
+        ret.put(TileType.FOREST,0f);
+        ret.put(TileType.CITY,0f);
+        return ret;
+    }
 
     public void recalculateProbs(int x_from, int y_from, int x_to, int y_to){
-        HashMap<TileType, Float> probsAvailableCards;
-        HashMap<TileType, Float> probsAllCards;
-        for (Card c: availableCards){
-
+        HashMap<TileType, Float> probsAvailableCards[][]= new HashMap[y_to-y_from+1][x_to-x_from+1];
+        HashMap<TileType, Float> probsAllCards[][]= new HashMap[y_to-y_from+1][x_to-x_from+1];
+        for (int i=0;i<x_to-x_from+1;i++){
+            for (int j=0;j<y_to-y_from+1;j++){
+                probsAllCards[j][i]=zeroMap();
+                probsAvailableCards[j][i]=zeroMap();
+                probs[j+y_from][i+x_from]=new HashMap<>();
+            }
         }
+        for (Card c: CardGenerator.generateCardsExceptRuins()){
+            HashMap<TileType, Boolean> [][] possible=new HashMap[y_to-y_from+1][x_to-x_from+1];
+            for (int i=x_from;i<x_to+1;i++){
+                for (int j=y_from;j<y_to+1;j++){
+                    possible[j-y_from][i-x_from]=new HashMap<>();
+                }
+            }
+            for (Possibility p:getAllPossibleActions(c,x_from,y_from,x_to,y_to)){
+                if (p.getX()>=x_from-3&&p.getX()<=x_to
+                        && p.getY()>=y_from-3&&p.getY()<=y_to){
+                    for (Point pt:p.getFilledCoords()){
+                        if (pt.x>=x_from&&pt.x<=x_to&&pt.y>=y_from&&pt.y<=y_to){
+                            possible[pt.y-y_from][pt.x-x_from].put(p.getType(),true);
+                        }
+                    }
+                }
+            }
+            for (int x=x_from;x<x_to+1;x++){
+                for (int y=y_from;y<y_to+1;y++){
+                    for (TileType t:Tile.allPlacableTypes())
+                        if (possible[y-y_from][x-x_from].containsKey(t)&&possible[y-y_from][x-x_from].get(t)){
+                            probsAllCards[y-y_from][x-x_from].put(t,probsAllCards[y-y_from][x-x_from].get(t)+1.0f/CardGenerator.fullCardCount);
+                            if (availableCards.contains(c))
+                                probsAvailableCards[y-y_from][x-x_from].put(t,probsAvailableCards[y-y_from][x-x_from].get(t)+1.0f/availableCards.size());
+                        }
+                }
+            }
+        }
+
+        float remSpr=t.getTimeRemainingToSeasonEnd(SPRING);
+        float remSum=t.getTimeRemainingToSeasonEnd(SUMMER);
+        float remAut=t.getTimeRemainingToSeasonEnd(AUTUMN);
+        float remWin=t.getTimeRemainingToSeasonEnd(WINTER);
+        float rems=t.getTimeRemainingToNextSeason();
+        for (int y=y_from;y<=y_to;y++){
+            for (int x=x_from;x<=x_to;x++){
+                probsAvailableCards[y-y_from][x-x_from]=mult(probsAvailableCards[y-y_from][x-x_from],rems);
+                if (remSpr>0) probs[y][x].put(SPRING,mult(sum(probsAvailableCards[y-y_from][x-x_from],mult(probsAllCards[y-y_from][x-x_from],remSpr-rems)),1.0f/remSpr));
+                else probs[y][x].put(SPRING,zeroMap());
+                if (remSum>0) probs[y][x].put(SUMMER,mult(sum(probsAvailableCards[y-y_from][x-x_from],mult(probsAllCards[y-y_from][x-x_from],remSum-rems)),1.0f/remSum));
+                else probs[y][x].put(SUMMER,zeroMap());
+                if (remAut>0) probs[y][x].put(AUTUMN,mult(sum(probsAvailableCards[y-y_from][x-x_from],mult(probsAllCards[y-y_from][x-x_from],remAut-rems)),1.0f/remAut));
+                else probs[y][x].put(AUTUMN,zeroMap());
+                if (remWin>0) probs[y][x].put(WINTER,mult(sum(probsAvailableCards[y-y_from][x-x_from],mult(probsAllCards[y-y_from][x-x_from],remWin-rems)),1.0f/remWin));
+                else probs[y][x].put(WINTER,zeroMap());
+            }
+        }
+    }
+
+    private LinkedList<Possibility> getAllPossibleActions(Card c, int x_from, int y_from, int x_to, int y_to) {
+        LinkedList<Possibility> ret=new LinkedList<Possibility>();
+        //Possible Card Choices
+        for (Possibility p1:c.getPossibilities()){
+            //Possible Orientations
+            for (Possibility p2:p1.getAllShapeRotations()){
+                //Possible Locations
+                for (int y=y_from;y<=y_to-p2.getHeight()+1;y++){
+                    for (int x=x_from;x<=x_to-p2.getWidth()+1;x++){
+                        if (isPossible(p2,x,y,c.onRuin)){
+                            ret.add(p2.addLocation(x,y));
+                        }
+                    }
+                }
+            }
+        }
+        return ret;
+    }
+
+    public HashMap<TileType, Float> sum(HashMap<TileType,Float> l, HashMap<TileType,Float> r){
+        HashMap<TileType, Float> ret=new HashMap<>();
+        for (TileType t:l.keySet()){
+            ret.put(t,l.get(t)+r.get(t));
+        }
+        return ret;
+    }
+
+    public HashMap<TileType, Float> mult(HashMap<TileType,Float> orig, float m){
+        HashMap<TileType, Float> ret=new HashMap<>();
+        for (TileType t:orig.keySet()){
+            ret.put(t,orig.get(t)*m);
+        }
+        return ret;
     }
 
     public int countOfEmptyNeighboursOfTileWithType(TileType t){
@@ -63,7 +161,7 @@ public class Field {
         LinkedList<TileType> ret= new LinkedList<>();
         for (Tile t:a.tiles){
             for (Tile s:getNeighbours(t.x,t.y)){
-                if (!ret.contains(s.getType())){
+                if (!ret.contains(s.getType())&&a.type!=s.getType()){
                     ret.add(s.getType());
                 }
             }
@@ -144,7 +242,6 @@ public class Field {
         Field f=usePossibility(r.bestPossibility(this,c));
         f.t.add(c.getDuration());
         replaceInGUI(f);
-        System.out.println(r.rateExpected(f));
         return f;
     }
 
@@ -173,6 +270,18 @@ public class Field {
             f.availableCards.add(c);
         }
         f.GUI=GUI;
+
+
+        for (int y=0;y<11;y++){
+            for (int x=0;x<11;x++){
+                f.probs[y][x]=new HashMap<>();
+                for (Season s:probs[y][x].keySet()){
+                    f.probs[y][x].put(s,new HashMap<>());
+                    for (TileType t:probs[y][x].get(s).keySet())
+                        f.probs[y][x].get(s).put(t,probs[y][x].get(s).get(t));
+                }
+            }
+        }
         return f;
     }
 
@@ -208,6 +317,7 @@ public class Field {
         if (p.isGetCoin()){
             f.coinsFromCards++;
         }
+        f.recalculateProbs(p.getX(),p.getY(),p.getX()+p.getWidth()-1,p.getY()+p.getHeight()-1);
         return f;
     }
 
@@ -251,6 +361,8 @@ public class Field {
         f.setRuin(1, 8);
         f.setRuin(9, 8);
         f.setRuin(5, 9);
+        f.availableCards=CardGenerator.generateAndShuffleCards();
+        f.recalculateProbs(0,0,10,10);
         return f;
     }
 
@@ -278,7 +390,7 @@ public class Field {
         f.setRuin(1, 6);
         f.setRuin(8, 7);
         f.setRuin(3, 9);
-
+        f.recalculateProbs(0,0,10,10);
         return f;
     }
 
@@ -305,22 +417,7 @@ public class Field {
     }
 
     public LinkedList<Possibility> getAllPossibleActions(Card c){
-        LinkedList<Possibility> ret=new LinkedList<Possibility>();
-        //Possible Card Choices
-        for (Possibility p1:c.getPossibilities()){
-            //Possible Orientations
-            for (Possibility p2:p1.getAllShapeRotations()){
-                //Possible Locations
-                for (int y=0;y<=h-p2.getHeight();y++){
-                    for (int x=0;x<=w-p2.getWidth();x++){
-                        if (isPossible(p2,x,y,c.onRuin)){
-                            ret.add(p2.addLocation(x,y));
-                        }
-                    }
-                }
-            }
-        }
-        return ret;
+        return getAllPossibleActions(c,0,0,10,10);
     }
 
     public LinkedList<Tile> getNeighbours(int x, int y){
@@ -330,10 +427,6 @@ public class Field {
         if (y>0) ret.add(map[y-1][x]);
         if (y<h-1) ret.add(map[y+1][x]);
         return ret;
-    }
-
-    public float ProbToFill(int x, int y){
-        return 0.01f;
     }
 
     public LinkedList<Tile> allTiles(){
@@ -353,22 +446,8 @@ public class Field {
         return false;
     }
 
-    public float probToFill(int x, int y, LinkedList<Card> l, TypeToBool t){
-        float f=0f;
-        boolean b;
-        for (Card c:l){
-            b=false;
-            for (Possibility p:c.getPossibilities()){
-                if (t.operation(p.getType())&&canFill(x,y,p))
-                    b=true;
-            }
-            if (b) f++;
-        }
-        return f/l.size();
-    }
-
     public float sumProbToFill(TypeToBool what, Season s){
-return sumProbToFill(what,(x)->true,s);
+        return sumProbToFill(what,(x)->true,s);
     }
 
     public float sumProbToFill(TypeToBool what, TypeToBool op, Season s){
@@ -387,42 +466,22 @@ return sumProbToFill(what,(x)->true,s);
         return ret;
     }
 
-    private float probToFill(int x, int y, LinkedList<Card> l){
-        float f=0f;
-        boolean b;
-        int ruinCount=0;
-        for (Card c:l){
-            if (c.ruinCard){
-                ruinCount++;
-                continue;
-            }
-            b=false;
-            for (Possibility p:c.getPossibilities()){
-                if (canFill(x,y,p))
-                    b=true;
-            }
-            if (b) f++;
-        }
-        return f/(l.size()-ruinCount);
-    }
-
     public float probabilityToFill(int x, int y, Season s){
-        float remtot=t.getTimeRemainingToSeasonEnd(s);
-        float p1=probToFill(x,y,availableCards);
-        float p2=probToFill(x,y, CardGenerator.generateCardsExceptRuins());
-        float rems=t.getTimeRemainingToNextSeason();
-
-        float ret= (rems*p1+(remtot-rems)*p2)/remtot;
-        if (Float.isNaN(ret)) throw new NullPointerException("WAAAAAAAH");
-        return ret;
+        float f=0.0f;
+        for (TileType t:probs[y][x].get(s).keySet()){
+            f+=probs[y][x].get(s).get(t);
+        }
+        return f;
     }
 
     public float probabilityToFill(int x, int y, Season s, TypeToBool tt){
-        float remtot=t.getTimeRemainingToSeasonEnd(s);
-        float p1=probToFill(x,y,availableCards,tt);
-        float p2=probToFill(x,y, CardGenerator.generateCardsExceptRuins(),tt);
-        float rems=t.getTimeRemainingToNextSeason();
-        return (rems*p1+(remtot-rems)*p2)/remtot;
+        float f=0.0f;
+        for (TileType t:probs[y][x].get(s).keySet()){
+            if (tt.operation(t)){
+                f+=probs[y][x].get(s).get(t);
+            }
+        }
+        return f;
     }
 
     public FieldWindow getFw() {
@@ -430,14 +489,14 @@ return sumProbToFill(what,(x)->true,s);
     }
 
     public boolean isPossible(Possibility p, int x, int y, boolean onRuin){
-        if (x<0||y<0||x+p.getWidth()>w||y+p.getHeight()>=h) return false; //out of bounds
+        if (x<0||y<0||x+p.getWidth()>w||y+p.getHeight()>h) return false; //out of bounds
         boolean ruinFound=false;
-        for (int j=0;j<p.getWidth();j++){
-            for (int i=0;i<p.getHeight();i++){
-                if (p.getToPlace()[i][j]&&map[y+i][x+j].getType()!=TileType.EMPTY){
+        for (int x2=0;x2<p.getWidth();x2++){
+            for (int y2=0;y2<p.getHeight();y2++){
+                if (p.getToPlace()[y2][x2]&&map[y+y2][x+x2].getType()!=TileType.EMPTY){
                     return false;
                 }
-                if (p.getToPlace()[i][j]&&map[y+i][x+j].ruin){
+                if (p.getToPlace()[y2][x2]&&map[y+y2][x+x2].ruin){
                     ruinFound=true;
                 }
             }

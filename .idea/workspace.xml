@@ -2,7 +2,55 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cc11125-c4cd-4fa0-811e-49e0651071a6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Game/Match.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/Evo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/EvoStats.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/ParamComparator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/Params.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/PlayMatchThread.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/PlacabilityRater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/ParamManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/ParamManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/Rater$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/Rater$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/Rater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/Rater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/RaterGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/RaterGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/City/SchildDesReiches.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/City/SchildDesReiches.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/CoinRater.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/CoinRater.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Forest/Gruenflaeche.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Forest/Gruenflaeche.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Forest/Schildwald.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Forest/Schildwald.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/WaterField/Bewaesserungskanal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/WaterField/Bewaesserungskanal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/WaterField/GoldenerKornspeicher.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/AI/SeasonRaters/WaterField/GoldenerKornspeicher.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/GUI/GUI_Manager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/GUI/GameStats.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/GUI/GameStats.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/Card.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/Card.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/CardGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/CardGenerator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/Possibility.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Card/Possibility.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Field/Field.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Field/Field.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Field/Tile/Tile.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Field/Tile/Tile.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Game/Match.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Game/Match.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Utility/Utilities$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Utility/Utilities$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Kartograph/Utility/Utilities.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Kartograph/Utility/Utilities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/ParamManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/ParamManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/Rater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/Rater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/RaterGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/RaterGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GUI_Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GUI_Manager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GUI/GameStats.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GUI/GameStats.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Card/Card.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Card/Card.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Card/CardGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Card/CardGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Card/Possibility.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Card/Possibility.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Field/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Field/Field.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Field/Tile/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Field/Tile/Tile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Game/Match.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game/Match.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utility/Utilities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Utility/Utilities.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Utility/Utilities.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1547">
-              <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
+            <state relative-caret-position="358">
+              <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -28,8 +76,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AI/Rater.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2074">
-              <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
+            <state relative-caret-position="194">
+              <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,49 +88,92 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Game/Match.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+            <state relative-caret-position="738">
+              <caret line="200" column="36" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Game/Field/Field.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1402#1403#0" expanded="true" />
-                <element signature="e#1434#1435#0" expanded="true" />
-                <element signature="e#4020#4021#0" expanded="true" />
-                <element signature="e#4055#4056#0" expanded="true" />
-                <element signature="e#6092#6093#0" expanded="true" />
-                <element signature="e#6134#6135#0" expanded="true" />
-                <element signature="e#7462#7463#0" expanded="true" />
-                <element signature="e#7499#7500#0" expanded="true" />
-                <element signature="e#8436#8437#0" expanded="true" />
-                <element signature="e#9879#9880#0" expanded="true" />
-                <element signature="e#9907#9908#0" expanded="true" />
-                <element signature="e#10863#10864#0" expanded="true" />
-                <element signature="e#10909#10910#0" expanded="true" />
-                <element signature="e#12849#12850#0" expanded="true" />
-                <element signature="e#13581#13582#0" expanded="true" />
-                <element signature="e#13653#13654#0" expanded="true" />
-                <element signature="e#13727#13728#0" expanded="true" />
+                <element signature="method#testTime#0;class#Match#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Utility/TickTock.java">
+        <entry file="file://$PROJECT_DIR$/src/GUI/GUI_Manager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="122" column="10" selection-start-line="122" selection-start-column="10" selection-end-line="122" selection-end-column="10" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="125">
+              <caret line="656" selection-start-line="656" selection-end-line="656" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AI/RaterGenerator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AI/ParamManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="131">
+              <caret line="153" column="14" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3713#3722#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AI/Evo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AI/EvoStats.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+              <caret line="22" column="35" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AI/ParamComparator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="e#172#173#0" expanded="true" />
+                <element signature="e#207#208#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -100,27 +191,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Strin</find>
-      <find>print</find>
-      <find>otherOrientation</find>
-      <find>set</find>
-      <find>&gt;0</find>
-      <find>repl</find>
-      <find>toSt</find>
-      <find>getNei</find>
-      <find>Sys</find>
-      <find>t</find>
-      <find>System</find>
-      <find>cop</find>
-      <find>Syste</find>
-      <find>getAll</find>
-      <find>Gef</find>
       <find>isPo</find>
       <find>array</find>
       <find>arr</find>
       <find>i,</find>
       <find>int y, int x</find>
-      <find>usePo</find>
       <find>isPossi</find>
       <find>deepCop</find>
       <find>make</find>
@@ -130,6 +205,22 @@
       <find>slp</find>
       <find>useBest</find>
       <find>deepC</find>
+      <find>prob</find>
+      <find>genera</find>
+      <find>standa</find>
+      <find>rec</find>
+      <find>probabilityToFil</find>
+      <find>probabilit</find>
+      <find>getAllPossibleActions</find>
+      <find>all</find>
+      <find>retu</find>
+      <find>usePo</find>
+      <find>time</find>
+      <find>actu</find>
+      <find>System.out</find>
+      <find>System.</find>
+      <find>Syste</find>
+      <find>System.out.println</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -143,54 +234,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Game/Card/PossibilityWithLocation.java" />
-        <option value="$PROJECT_DIR$/src/Game/Field/Tile/TileType.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Season.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/RaterType.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/SingleRater.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/SeasonRater.java" />
         <option value="$PROJECT_DIR$/src/Game/Field/Tile/MyCanvas.java" />
         <option value="$PROJECT_DIR$/src/Todo.txt" />
         <option value="$PROJECT_DIR$/src/Game/Field/Tile/FieldWindow.java" />
-        <option value="$PROJECT_DIR$/src/Game/Card/Possibility.java" />
         <option value="$PROJECT_DIR$/src/Utility/TileToBoolean.java" />
-        <option value="$PROJECT_DIR$/src/Game/Field/Tile/Tile.java" />
         <option value="$PROJECT_DIR$/src/Utility/TypeToBool.java" />
-        <option value="$PROJECT_DIR$/src/Game/Card/CardGenerator.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/SingleRater.java" />
-        <option value="$PROJECT_DIR$/src/AI/RaterGenerator.java" />
-        <option value="$PROJECT_DIR$/src/AI/ParamManager.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/NullRater.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/City/BastionenInDerWildnis.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/City/Metropole.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/City/SchillerndeEbene.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Duesterwald.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Pfad_des_Waldes.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/DieKessel.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/DieLangeStrasse.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java" />
-        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/TalDerMagier.java" />
         <option value="$PROJECT_DIR$/src/AI/Time.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/Grenzland.java" />
-        <option value="$PROJECT_DIR$/src/Game/Card/Card.java" />
-        <option value="$PROJECT_DIR$/src/GUI/GameStats.java" />
         <option value="$PROJECT_DIR$/src/GUI/FieldWindow.java" />
-        <option value="$PROJECT_DIR$/src/Utility/Utilities.java" />
         <option value="$PROJECT_DIR$/src/GUI/CardWindow.java" />
         <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/AusgedehnteStraende.java" />
         <option value="$PROJECT_DIR$/src/Game/Field/Tile/Area.java" />
-        <option value="$PROJECT_DIR$/src/GUI/GUI_Manager.java" />
         <option value="$PROJECT_DIR$/src/Utility/TickTock.java" />
-        <option value="$PROJECT_DIR$/src/AI/Rater.java" />
-        <option value="$PROJECT_DIR$/src/Game/Match.java" />
         <option value="$PROJECT_DIR$/src/Game/Field/FillProb.java" />
+        <option value="$PROJECT_DIR$/src/Game/Field/Tile/Tile.java" />
+        <option value="$PROJECT_DIR$/src/Game/Card/CardGenerator.java" />
+        <option value="$PROJECT_DIR$/src/Game/Card/Card.java" />
+        <option value="$PROJECT_DIR$/src/Game/Card/Possibility.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java" />
         <option value="$PROJECT_DIR$/src/Game/Field/Field.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java" />
+        <option value="$PROJECT_DIR$/src/GUI/GameStats.java" />
+        <option value="$PROJECT_DIR$/src/AI/Rater.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/PlacabilityRater.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java" />
+        <option value="$PROJECT_DIR$/src/AI/RaterGenerator.java" />
+        <option value="$PROJECT_DIR$/src/AI/SeasonRaters/Params.java" />
+        <option value="$PROJECT_DIR$/src/AI/EvoAlg.java" />
+        <option value="$PROJECT_DIR$/src/AI/Params.java" />
+        <option value="$PROJECT_DIR$/src/AI/PlayMatchThread.java" />
+        <option value="$PROJECT_DIR$/src/AI/ParamComparator.java" />
+        <option value="$PROJECT_DIR$/src/Utility/Utilities.java" />
+        <option value="$PROJECT_DIR$/src/AI/EvoStats.java" />
+        <option value="$PROJECT_DIR$/src/AI/ParamManager.java" />
+        <option value="$PROJECT_DIR$/src/Game/Match.java" />
+        <option value="$PROJECT_DIR$/src/AI/Evo.java" />
+        <option value="$PROJECT_DIR$/src/GUI/GUI_Manager.java" />
       </list>
     </option>
   </component>
@@ -209,6 +303,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,22 +327,14 @@
               <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kartograph" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AI" type="462c0819:PsiDirectoryNode" />
-              <item name="SeasonRaters" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kartograph" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="AI" type="462c0819:PsiDirectoryNode" />
-              <item name="SeasonRaters" type="462c0819:PsiDirectoryNode" />
-              <item name="Forest" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kartograph" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Card" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
@@ -254,6 +342,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Game" type="462c0819:PsiDirectoryNode" />
               <item name="Field" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kartograph" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Game" type="462c0819:PsiDirectoryNode" />
+              <item name="Field" type="462c0819:PsiDirectoryNode" />
+              <item name="Tile" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kartograph" type="b2602c69:ProjectViewProjectNode" />
@@ -271,12 +367,10 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609062964997" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1609245202749" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -354,7 +448,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27046978" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27449664" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -364,7 +458,7 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39943343" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -390,7 +484,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.0" />
+    <MESSAGE value="Singleraters debugged, coinrater and placabilityrater added, evo ai added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Singleraters debugged, coinrater and placabilityrater added, evo ai added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -403,11 +498,51 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="4" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java</url>
+          <line>32</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchillerndeEbene.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchillerndeEbene.java</url>
+          <line>29</line>
+          <properties />
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
+      <expression>
+        <expression-string>new ArrayList&lt;Integer&gt;(10)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>new ArrayList&lt;Integer&gt;(parents.length)</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>probsAllCards[0][3]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>probsAllCards[3][0]</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
       <expression>
         <expression-string>map[y-1][x].getType()</expression-string>
         <language-id>JAVA</language-id>
@@ -433,69 +568,9 @@
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
-      <expression>
-        <expression-string>C</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>C.rateExpected(f,r1,Season.SUMMER)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>B.rateExpected(f,r1,Season.SUMMER)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>B.rateExpected(f,r1,Season.SPRING)</expression-string>
-        <language-id>JAVA</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Kartograph.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Card/PossibilityWithLocation.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="381" selection-start-line="381" selection-end-line="381" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/lang/ClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="435" selection-start-line="435" selection-end-line="435" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/jre/lib/rt.jar!/sun/misc/URLClassPath.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="696" column="24" selection-start-line="696" selection-start-column="24" selection-end-line="696" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/io/PrintStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="820" selection-start-line="820" selection-end-line="820" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Field/Tile/TileType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/SeasonRater.java" />
     <entry file="file://$PROJECT_DIR$/src/Todo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -524,42 +599,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Card/CardGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="21" column="36" selection-start-line="21" selection-start-column="36" selection-end-line="21" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="17" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#608#609#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-            <element signature="e#687#688#0" expanded="true" />
-            <element signature="e#722#723#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Card/Possibility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="31" column="23" selection-start-line="31" selection-start-column="23" selection-end-line="31" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#691#692#0" expanded="true" />
-            <element signature="e#721#722#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/SingleRater.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -567,26 +606,6 @@
           <folding>
             <element signature="e#240#241#0" expanded="true" />
             <element signature="e#266#267#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/RaterGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="18" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/ParamManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -610,36 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchillerndeEbene.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -673,50 +662,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/TalDerMagier.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-355">
-          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="16" column="43" selection-start-line="16" selection-start-column="43" selection-end-line="16" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Shape/DieKessel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="16" column="32" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -746,17 +695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Card/Card.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="50" column="25" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
-          <folding>
-            <element signature="e#1164#1165#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/GUI/FieldWindow.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -779,40 +717,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Shape/Grenzland.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="614">
-          <caret line="65" column="57" selection-start-line="65" selection-start-column="57" selection-end-line="65" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="17" column="43" selection-start-line="17" selection-start-column="43" selection-end-line="17" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Duesterwald.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="36" column="9" lean-forward="true" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GameStats.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="12" selection-start-column="12" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -829,18 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Field/Tile/Tile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#743#744#0" expanded="true" />
-            <element signature="e#846#847#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Field/Tile/Area.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -848,33 +744,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/GUI/GUI_Manager.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/Field/FillProb.java" />
+    <entry file="file://$PROJECT_DIR$/src/Game/Card/Card.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="85" column="20" lean-forward="true" selection-start-line="85" selection-start-column="20" selection-end-line="85" selection-end-column="20" />
+        <state relative-caret-position="748">
+          <caret line="55" column="37" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1496#1497#0" expanded="true" />
+            <element signature="e#1537#1538#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Card/CardGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="11" column="42" selection-start-line="11" selection-start-column="42" selection-end-line="11" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Utility/Utilities.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/Field/Tile/TileType.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="95" column="9" selection-start-line="95" selection-start-column="9" selection-end-line="95" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AI/Rater.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/Field/Tile/Tile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2074">
-          <caret line="124" column="29" selection-start-line="124" selection-start-column="29" selection-end-line="124" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="850">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -885,20 +788,109 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Field/FillProb.java">
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Shape/Grenzland.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+        <state relative-caret-position="149">
+          <caret line="55" selection-start-line="55" selection-end-line="55" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Game/Match.java">
+    <entry file="file://$PROJECT_DIR$/src/Game/Card/Possibility.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="44" lean-forward="true" selection-start-line="44" selection-end-line="44" />
+        <state relative-caret-position="341">
+          <caret line="94" column="5" lean-forward="true" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/javax/swing/LayoutComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="74" selection-start-line="74" selection-end-line="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Schildwald.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="25" column="56" lean-forward="true" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/Bewaesserungskanal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchildDesReiches.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="53" column="32" lean-forward="true" selection-start-line="53" selection-start-column="32" selection-end-line="53" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/GoldenerKornspeicher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2725#2726#0" expanded="true" />
+            <element signature="e#2770#2771#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/City/SchillerndeEbene.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/WaterField/TalDerMagier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-136">
+          <caret line="17" column="36" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Forest/Gruenflaeche.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1089">
+          <caret line="75" column="52" lean-forward="true" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GameStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="86">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -907,27 +899,180 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game/Field/Field.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="41" column="41" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
+        <state relative-caret-position="153">
+          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1402#1403#0" expanded="true" />
-            <element signature="e#1434#1435#0" expanded="true" />
-            <element signature="e#4020#4021#0" expanded="true" />
-            <element signature="e#4055#4056#0" expanded="true" />
-            <element signature="e#6092#6093#0" expanded="true" />
-            <element signature="e#6134#6135#0" expanded="true" />
-            <element signature="e#7462#7463#0" expanded="true" />
-            <element signature="e#7499#7500#0" expanded="true" />
-            <element signature="e#8436#8437#0" expanded="true" />
-            <element signature="e#9879#9880#0" expanded="true" />
-            <element signature="e#9907#9908#0" expanded="true" />
-            <element signature="e#10863#10864#0" expanded="true" />
-            <element signature="e#10909#10910#0" expanded="true" />
-            <element signature="e#12849#12850#0" expanded="true" />
-            <element signature="e#13581#13582#0" expanded="true" />
-            <element signature="e#13653#13654#0" expanded="true" />
-            <element signature="e#13727#13728#0" expanded="true" />
+            <element signature="e#10242#10243#0" expanded="true" />
+            <element signature="e#10284#10285#0" expanded="true" />
+            <element signature="e#11612#11613#0" expanded="true" />
+            <element signature="e#11649#11650#0" expanded="true" />
+            <element signature="e#13968#13969#0" expanded="true" />
+            <element signature="e#13890#13891#0" expanded="true" />
+            <element signature="e#13940#13941#0" expanded="true" />
+            <element signature="e#15013#15014#0" expanded="true" />
+            <element signature="e#15067#15068#0" expanded="true" />
+            <element signature="e#16548#16549#0" expanded="true" />
+            <element signature="e#17293#17294#0" expanded="true" />
+            <element signature="e#17365#17366#0" expanded="true" />
+            <element signature="e#17439#17440#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/CoinRater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/PlacabilityRater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="26" column="60" selection-start-line="26" selection-start-column="60" selection-end-line="26" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#167#168#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/SeasonRaters/Shape/UnzugaenglicheBaronie.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="89" column="5" lean-forward="true" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/Params.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#189#190#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#206#207#0" expanded="true" />
+            <element signature="e#225#226#0" expanded="true" />
+            <element signature="e#266#267#0" expanded="true" />
+            <element signature="e#297#298#0" expanded="true" />
+            <element signature="e#391#392#0" expanded="true" />
+            <element signature="e#423#424#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/PlayMatchThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" column="65" selection-start-line="19" selection-start-column="65" selection-end-line="19" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/ParamComparator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="e#172#173#0" expanded="true" />
+            <element signature="e#207#208#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Utility/Utilities.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="358">
+          <caret line="121" column="45" selection-start-line="121" selection-start-column="45" selection-end-line="121" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_201/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="656" selection-start-line="656" selection-end-line="656" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/Rater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="194">
+          <caret line="147" column="16" selection-start-line="147" selection-start-column="16" selection-end-line="147" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/RaterGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="72" column="5" selection-start-line="72" selection-start-column="5" selection-end-line="72" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/ParamManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="153" column="14" selection-start-line="153" selection-start-column="14" selection-end-line="153" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3713#3722#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/EvoStats.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="30" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Game/Match.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="738">
+          <caret line="200" column="36" selection-start-line="200" selection-start-column="18" selection-end-line="200" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#testTime#0;class#Match#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/GUI/GUI_Manager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="202">
+          <caret line="122" column="10" selection-start-line="122" selection-start-column="10" selection-end-line="122" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AI/Evo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="19" column="40" lean-forward="true" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,5 +1,7 @@
 package AI;
 
+import AI.SeasonRaters.CoinRater;
+import AI.SeasonRaters.PlacabilityRater;
 import AI.SeasonRaters.Season;
 import AI.SeasonRaters.SingleRater;
 import Game.Card.Card;
@@ -13,6 +15,8 @@ public class Rater {
     SingleRater B;
     SingleRater C;
     SingleRater D;
+    SingleRater place;
+    SingleRater coin;
     TickTock tA;
     TickTock tB;
     TickTock tC;
@@ -23,6 +27,17 @@ public class Rater {
         this.B=B;
         this.C=C;
         this.D=D;
+        place=new PlacabilityRater();
+        coin= new CoinRater();
+    }
+
+    public Rater(SingleRater A, SingleRater B, SingleRater C, SingleRater D, PlacabilityRater P, CoinRater c){
+        this.A=A;
+        this.B=B;
+        this.C=C;
+        this.D=D;
+        place=P;
+        coin=c;
     }
 
     public void setTimers(){
@@ -34,10 +49,10 @@ public class Rater {
 
     public int rate(Field f,Season s){
         switch (s){
-            case SPRING: return A.rateCurrent(f)+B.rateCurrent(f);
-            case SUMMER: return B.rateCurrent(f)+C.rateCurrent(f);
-            case AUTUMN: return C.rateCurrent(f)+D.rateCurrent(f);
-            case WINTER: return D.rateCurrent(f)+A.rateCurrent(f);
+            case SPRING: return A.rateCurrent(f)+B.rateCurrent(f)+coin.rateCurrent(f);
+            case SUMMER: return B.rateCurrent(f)+C.rateCurrent(f)+coin.rateCurrent(f);
+            case AUTUMN: return C.rateCurrent(f)+D.rateCurrent(f)+coin.rateCurrent(f);
+            case WINTER: return D.rateCurrent(f)+A.rateCurrent(f)+coin.rateCurrent(f);
         }
         return 0;
     }
@@ -83,6 +98,8 @@ public class Rater {
             if (tA!=null) tB.tick();
             points+=B.rateExpected(f,r1,Season.SPRING);
             if (tA!=null) tB.tock();
+            points+=place.rateExpected(f,r1,Season.SPRING);
+            points+=coin.rateExpected(f,r1,Season.SPRING);
         }
         if (r2!=0f){
             if (tA!=null) tB.tick();
@@ -91,6 +108,8 @@ public class Rater {
             if (tA!=null) tC.tick();
             points+=C.rateExpected(f,r1,Season.SUMMER);
             if (tA!=null) tC.tock();
+            points+=place.rateExpected(f,r2,Season.SUMMER);
+            points+=coin.rateExpected(f,r2,Season.SUMMER);
         }
         if (r3!=0f){
             if (tA!=null) tC.tick();
@@ -99,6 +118,8 @@ public class Rater {
             if (tA!=null) tD.tick();
             points+=D.rateExpected(f,r1,Season.AUTUMN);
             if (tA!=null) tD.tock();
+            points+=place.rateExpected(f,r3,Season.AUTUMN);
+            points+=coin.rateExpected(f,r3,Season.AUTUMN);
         }
         if (r4!=0f){
             if (tA!=null) tD.tick();
@@ -107,6 +128,8 @@ public class Rater {
             if (tA!=null) tA.tick();
             points+=A.rateExpected(f,r1,Season.WINTER);
             if (tA!=null) tA.tock();
+            points+=place.rateExpected(f,r4,Season.WINTER);
+            points+=coin.rateExpected(f,r4,Season.WINTER);
         }
         if (Float.isNaN(points)){
             throw new NullPointerException("NANANANANANANANA BatmNAN");

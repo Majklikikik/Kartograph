@@ -4,6 +4,7 @@ import AI.Time;
 import Game.Card.Card;
 
 public class GameStats {
+    public int coin;
     private Card currentCard;
     public int Points;
     public float expectedPoints;

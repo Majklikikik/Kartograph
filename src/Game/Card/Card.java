@@ -1,6 +1,7 @@
 package Game.Card;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Card {
     public boolean ruinCard=false;
@@ -49,5 +50,18 @@ public class Card {
 
     public String getName() {
         return this.name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Card card = (Card) o;
+        return name.equals(card.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

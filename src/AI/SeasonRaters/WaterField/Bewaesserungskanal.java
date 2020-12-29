@@ -34,7 +34,7 @@ public class Bewaesserungskanal extends SingleRater {
                 }
                 else if (f.getType(x, y)==TileType.FIELD){
                     for (Tile t:f.getNeighbours(x,y)){
-                        if (t.getType()==TileType.FIELD){
+                        if (t.getType()==TileType.WATER){
                             b=true;
                             break;
                         }

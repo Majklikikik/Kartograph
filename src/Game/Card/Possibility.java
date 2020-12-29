@@ -4,6 +4,7 @@ import Game.Field.Tile.Tile;
 import Game.Field.Tile.TileType;
 import Utility.Utilities;
 
+import java.awt.*;
 import java.util.LinkedList;
 
 import static Utility.Utilities.*;
@@ -35,7 +36,16 @@ public class Possibility {
 
     public boolean valid(){
         return this.type!=TileType.EMPTY&&this.toPlace!=null;
+    }
 
+    public LinkedList<Point> getFilledCoords(){
+        LinkedList<Point> ret=new LinkedList<>();
+        for (int y=0;y<toPlace.length;y++){
+            for (int x=0;x<toPlace[0].length;x++){
+                if (toPlace[y][x]) ret.add(new Point(x+this.x,y+this.y));
+            }
+        }
+        return ret;
     }
 
     public Possibility otherOrientation(boolean [][] newOr){

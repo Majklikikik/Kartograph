@@ -1,5 +1,6 @@
 package Utility;
 
+import AI.Params;
 import Game.Field.Tile.Tile;
 import Game.Field.Tile.TileType;
 
@@ -106,4 +107,21 @@ public class Utilities {
             }
         }
     }
+
+    public static float average(Params[] a){
+        float ret=0;
+        for (Params s:a){
+            ret+=s.points/(float)a.length;
+        }
+        return ret;
+    }
+
+    public static float deviation(Params[] a, float avg){
+        float ret=0;
+        for (Params s:a){
+            ret+=(avg-s.points)*(avg-s.points)/a.length;
+        }
+        return (float)Math.sqrt(ret);
+    }
+
 }

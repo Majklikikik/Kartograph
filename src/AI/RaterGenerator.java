@@ -19,12 +19,11 @@ import AI.SeasonRaters.WaterField.GoldenerKornspeicher;
 import AI.SeasonRaters.WaterField.TalDerMagier;
 
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Random;
 
 public class RaterGenerator {
-    public static LinkedList<Rater>  getFourRandomRaters(HashMap<Class<?>,float []> params, Random rand){
+    public static LinkedList<Rater>  getFourRandomRaters(Params params, Random rand){
         float r= rand.nextFloat();
         LinkedList<SingleRater> l=new LinkedList<>();
 
