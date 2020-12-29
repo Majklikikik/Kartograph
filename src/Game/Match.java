@@ -71,7 +71,7 @@ public class Match {
             System.out.println(f);
         }*/
 
-        Evo.EvoPlay("Best.params");
+        Evo.EvoPlay("Best.params",true);
     }
 
     private static void playRandomMatch(boolean hard, boolean show, boolean waitAlways, boolean waitRating){

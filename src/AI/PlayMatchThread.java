@@ -15,9 +15,11 @@ public class PlayMatchThread implements Runnable {
     }
     @Override
     public void run() {
-        LinkedList<Rater> raters=RaterGenerator.getFourRandomRaters(P,r);
-        for (Rater rr:raters) {
-            P.points+= Match.playMatch(rr,r,Evo.HARDMODE,Evo.SHOW,0,false,false);
+        for (int i=0;i<Evo.GAMESETS_PER_GENERATION;i++){
+            LinkedList<Rater> raters=RaterGenerator.getFourRandomRaters(P,r);
+            for (Rater rr:raters) {
+                P.points+= Match.playMatch(rr,r,Evo.HARDMODE,Evo.SHOW,0,false,false);
+            }
         }
     }
 }

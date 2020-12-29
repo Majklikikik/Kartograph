@@ -125,7 +125,6 @@ public class ParamManager {
 
 
     public static Params[] cross(Params l, Params r, float crossProb1, float crossProb2){
-        Params nl=new Params(), nr=new Params();
         Params [] ret=new Params[]{l.copy(),r.copy()};
         if (Math.random()>crossProb1){
             return ret;
@@ -145,7 +144,7 @@ public class ParamManager {
     public static Params[] multiply(Params[] parents, int factor, float mutProb1, float mutProb2, float mutBas, float crossProb1, float crossProb2){
         Params[] ret= new Params[parents.length*factor];
         for (int i=0;i<parents.length;i++){
-            ret[i]=parents[i];
+            ret[i]=parents[i].copy();
         }
         ArrayList<Integer> indices=new ArrayList<Integer>(parents.length);
         for (int i=0;i<parents.length;i++){

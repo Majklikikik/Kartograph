@@ -124,4 +124,10 @@ public class Utilities {
         return (float)Math.sqrt(ret);
     }
 
+    public static String dateDiffToString(long l) {
+        int sec=(int)l/1000;
+        int min=sec/60;
+        int h=min/60;
+        return h+":"+(min%60)+":"+(sec%60)+"."+(l%1000);
+    }
 }

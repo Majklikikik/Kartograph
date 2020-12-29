@@ -15,30 +15,34 @@ public class Evo {
     public final static float MUT_BASIS=2f;
     public final static float CROSS_PROB_TOT=0.5f;
     public final static float CROSS_PROB_SIN=0.3f;
-    public final static int MULT_FACT=5;
+    public final static int MULT_FACT=4;
     public final static boolean HARDMODE=false;
-    public final static boolean SHOW=true;
+    public final static boolean SHOW=false;
     public final static int THREAD_COUNT=8;
-    public final static int GEN_COUNT=3;
-    public final static int POP_SIZE=10;
+    public final static int GEN_COUNT=10;
+    public final static int POP_SIZE=6;
     public final static boolean PRINT_PROGRESS=true;
+    public final static int GAMESETS_PER_GENERATION=5;
 
 
     public static void EvoPlay(String loadBestFrom, String saveBestTo){
         EvoPlay(ParamManager.readMultipleParams(loadBestFrom),saveBestTo);
     }
-    public static void EvoPlay(String saveBestTo){
+    public static void EvoPlay(String saveBestTo, boolean defaultParams){
         Params[] begin=new Params[POP_SIZE];
         for (int i=0;i<POP_SIZE;i++){
-            begin[i]=ParamManager.getRandomParams();
+            if (defaultParams) begin[i]=ParamManager.getDefaultParams();
+                else begin[i]=ParamManager.getRandomParams();
         }
         EvoPlay(begin,saveBestTo);
     }
     public static void EvoPlay(Params[] firstParams, String saveBestTo){
         EvoStats s=new EvoStats();
+        Date d=new Date();
         for (int i=0;i<GEN_COUNT;i++){
             if (PRINT_PROGRESS){
                 System.out.println("Generation "+(i+1)+"/"+GEN_COUNT);
+                System.out.println(Utilities.dateDiffToString(new Date().getTime()-d.getTime()));
             }
             firstParams=nextGen(firstParams,s);
         }
@@ -90,11 +94,22 @@ int c=0;
         float avgAll=0;
         float devBest=0;
         float devAll=0;
+        Random rand=new Random(666);
+        LinkedList<Rater> raters=RaterGenerator.getFourRandomRaters(ret[0],rand);
+        int pts=0;
+        for (int i=0;i<4;i++){
+            pts+=Match.playMatch(raters.pop(),rand,false,false,0,false,false);
+        }
         avgBest= Utilities.average(ret);
         avgAll=Utilities.average(next);
         devBest=Utilities.deviation(ret,avgBest);
         devAll=Utilities.deviation(next,avgAll);
-        stat.add(avgAll,devAll,avgBest,devBest);
+        stat.add(avgAll,devAll,avgBest,devBest,pts);
+        System.out.println("AvgBest: "+avgBest);
+        System.out.println("AvgAll: "+avgAll);
+        System.out.println("devBest: "+devBest);
+        System.out.println("devAll: "+devAll);
+        System.out.println("Test Game: "+pts);
     }
 
 
